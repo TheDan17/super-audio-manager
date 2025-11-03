@@ -8,7 +8,7 @@
 
 ### Функциональные требования
 
-- [SRS](t.me)
+- [SRS](documents/requirements/SRS.md)
 - [Изображения прототипа UI](t.me)
 - [Диаграммы](t.me)
 
