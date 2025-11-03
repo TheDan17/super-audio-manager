@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file alias="pin-x64.png">icon_pin_64x64.png</file>
+        <file alias="pin-x16.png">icon_pin_16x16.png</file>
+        <file alias="search-x16.png">icon_search_16x16.png</file>
+        <file alias="album_placeholder_x256.png">256Breezeicons-actions-22-media-album-cover-manager-amarok.svg.png</file>
+        <file>icon_pencil_16x16.png</file>
+        <file alias="settings_x16.png">icon_setting_16x16.png</file>
+    </qresource>
+</RCC>
