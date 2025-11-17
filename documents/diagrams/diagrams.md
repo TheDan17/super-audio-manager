@@ -1,0 +1,5 @@
+![](Class Diagram.jpg)
+![](Use Case Diagram.jpg)
+![](Activity - Sync.jpg)
+![](Sequence - Filters.jpg)
+![](State Machine - Player.jpg)
