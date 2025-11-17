@@ -1,9 +1,9 @@
-![Class Diagram](/Class Diagram.jpg)
+![Class Diagram](./Class%20Diagram.jpg)
 
-![Use Case Diagram](./Use Case Diagram.jpg)
+![Use Case Diagram](./Use%20Case%20Diagram.jpg)
 
-![Activity Diagram](../diagrams/Activity - Sync.jpg)
+![Activity Diagram](../diagrams/Activity%20-%20Sync.jpg)
 
-![Sequence Diagram](./"Sequence - Filters.jpg")
+![Sequence Diagram](./Sequence%20-%20Filters.jpg)
 
-![State Machine Diagram]('./State Machine - Player.jpg')
+![State Machine Diagram](./State%20Machine%20-%20Player.jpg)
