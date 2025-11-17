@@ -9,6 +9,7 @@
 ---
 
 ## Activity Diagrams
+[Сценарий применения Синхронизации](./script_sync.txt)
 ![Activity Diagram](../diagrams/Activity%20-%20Sync.jpg)
 
 ---
