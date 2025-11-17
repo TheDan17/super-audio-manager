@@ -10,7 +10,7 @@
 
 - [SRS](documents/requirements/SRS.md)
 - [Изображения прототипа UI (мокапы)](documents/mockups)
-- [Диаграммы](documents/diagrams)
+- [Диаграммы](documents/diagrams/diagrams.md)
 
 ### Тестирование
 - План тестирования
