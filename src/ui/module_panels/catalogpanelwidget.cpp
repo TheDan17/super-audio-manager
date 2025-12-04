@@ -18,6 +18,7 @@ CatalogPanelWidget::CatalogPanelWidget(QWidget *parent) :
 
     ui->catalogToolBox->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->catalogToolBox, &QWidget::customContextMenuRequested, this, &CatalogPanelWidget::onToolBoxContextMenuRequested);
+    connect(ui->moduleManagerButton, &QPushButton::clicked, this, &CatalogPanelWidget::requestOpenSettings);
 }
 
 CatalogPanelWidget::~CatalogPanelWidget()
@@ -25,22 +26,29 @@ CatalogPanelWidget::~CatalogPanelWidget()
     delete ui;
 }
 
-void add_module_to_qlistwidget(QListWidget* list, ModuleDistillMetaInfo module_info,
-                               bool isShowActions, CatalogPanelWidget::ViewMode view_mode){
+void CatalogPanelWidget::add_module_to_qlistwidget(QListWidget* list, ModuleDistillMetaInfo module_info,
+                                                   bool isShowActions, CatalogPanelWidget::ViewMode view_mode)
+{
     QWidget* itemWidget = nullptr;
     if (view_mode == CatalogPanelWidget::ViewMode::Detailed) {
-        itemWidget = new ModuleCatalogListItem(module_info, isShowActions);
+        auto* realItem = new ModuleCatalogListItem(module_info, isShowActions);
+        itemWidget = realItem;
+
+        // --- ВАЖНО: Пробрасываем сигнал нажатия кнопки ---
+        connect(realItem, &ModuleCatalogListItem::open_panel_clicked, this, [this](const ModuleDistillMetaInfo& info){
+            emit requestOpenModule(info.uuid); // Сигнализируем наверх
+        });
+
     } else {
-        itemWidget = new QLabel(module_info.localizedName); // TODO отдельный виджет
+        itemWidget = new QLabel(module_info.localizedName);
     }
 
     auto* listItem = new QListWidgetItem(list);
     listItem->setSizeHint(itemWidget->sizeHint());
-
     list->addItem(listItem);
-    listItem->setData(Qt::UserRole, module_info.uuid); // Сохраняем ID модуля в данных элемента списка для легкого доступа
     list->setItemWidget(listItem, itemWidget);
 }
+
 
 void CatalogPanelWidget::populate(const QVector<ModuleDistillMetaInfo>& allModules)
 {

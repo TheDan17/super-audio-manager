@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QVector>
+#include <QListWidget>
 #include "../../items/modulemetainfo.h"
 
 
@@ -34,7 +35,13 @@ private slots:
     void onFilterTextChanged(const QString& text);
     void onToolBoxContextMenuRequested(const QPoint& pos);
 
+signals:
+    void requestOpenModule(QString uuid);
+    void requestOpenSettings(); // <--- Добавить
+
 private:
+    void add_module_to_qlistwidget(QListWidget* list, ModuleDistillMetaInfo module_info, bool isShowActions, ViewMode view_mode);
+
     Ui::CatalogPanelWidget *ui;
 
     QVector<ModuleDistillMetaInfo> m_modules;

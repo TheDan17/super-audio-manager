@@ -15,6 +15,9 @@ public:
     explicit PlayerPanelWidget(QWidget *parent = nullptr);
     ~PlayerPanelWidget();
 
+signals:
+    void requestAddFromManager();
+
 private:
     Ui::PlayerPanelWidget *ui;
 };

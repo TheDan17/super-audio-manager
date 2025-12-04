@@ -9,7 +9,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Svg)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Svg Multimedia)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -43,6 +43,10 @@ qt_add_executable(audio-lib-super
     ui/modal_widgets/filtereditcomplexmockup.h ui/modal_widgets/filtereditcomplexmockup.cpp ui/modal_widgets/filtereditcomplexmockup.ui
     ui/modal_widgets/appsettingsdialog.h ui/modal_widgets/appsettingsdialog.cpp ui/modal_widgets/appsettingsdialog.ui
     ui/modal_widgets/modulemanagerwidget.h ui/modal_widgets/modulemanagerwidget.cpp ui/modal_widgets/modulemanagerwidget.ui
+    core/api.h
+    core/core.h
+    modules/impl_modules.h
+    ui/modal_widgets/sourcesmanagerdialog.h ui/modal_widgets/sourcesmanagerdialog.cpp
 )
 
 target_include_directories(audio-lib-super PUBLIC
@@ -53,7 +57,7 @@ target_include_directories(audio-lib-super PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/ui/modal_widgets
 )
 
-target_link_libraries(audio-lib-super PRIVATE Qt::Widgets Qt::Svg)
+target_link_libraries(audio-lib-super PRIVATE Qt::Widgets Qt::Svg Qt::Multimedia)
 
 include(GNUInstallDirs)
 install(TARGETS audio-lib-super

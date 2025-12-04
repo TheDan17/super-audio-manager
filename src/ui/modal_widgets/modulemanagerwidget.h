@@ -2,6 +2,8 @@
 #define MODULEMANAGERWIDGET_H
 
 #include <QWidget>
+#include <QFrame>
+#include <QVector>
 
 namespace Ui {
 class ModuleManagerWidget;
@@ -17,6 +19,12 @@ public:
 
 private:
     Ui::ModuleManagerWidget *ui;
+
+    struct ModuleRow {
+        QString name;
+        QFrame* frame;
+    };
+    QVector<ModuleRow> m_rows;
 };
 
 #endif // MODULEMANAGERWIDGET_H
