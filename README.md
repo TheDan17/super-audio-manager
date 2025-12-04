@@ -13,5 +13,5 @@
 - [Диаграммы](documents/diagrams/diagrams.md)
 
 ### Тестирование
-- План тестирования
-- Результаты тестирования
+- [План тестирования](documents/tests/TEST_PLAN-a.md)
+- [Результаты тестирования](documents/tests/TEST_RESULTS-a.md)
